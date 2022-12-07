@@ -10,7 +10,7 @@ from pylab import *
 
 #loading file
 exp = pyopenms.MSExperiment()
-pyopenms.MzMLFile().load("D:\\4th\\Computational biology\\task1\\BSA1.mzML", exp)
+pyopenms.MzMLFile().load("BSA1.mzML", exp)
 
 specMass = []
 Lmass = []
@@ -68,7 +68,7 @@ retentionTime = [spec_RT[i//6] for i in range(len(spec_RT)*6)]
 #create first dataframe
 data = {"Mass": Masses, "Intensity": Intensities, "RT": retentionTime}
 DF = pd.DataFrame(data)
-DF.to_csv('D:\\4th\\Computational biology\\task1\\Data1.csv')
+DF.to_csv('Data1.csv')
 
 
 # Round Masses to the nearest 5 decimal places to easily find the most frequent Mass
@@ -95,7 +95,7 @@ for i in mode_index:
 #create second dataframe
 data2 = {"Intensity": depend_Intensity, "RT": depend_RT}
 DF2 = pd.DataFrame(data2)
-DF2.to_csv('D:\\4th\\Computational biology\\task1\\Data2.csv')
+DF2.to_csv('Data2.csv')
 
 # 2d plot
 fig = plt.figure()
